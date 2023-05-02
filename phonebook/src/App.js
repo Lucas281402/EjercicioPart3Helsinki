@@ -73,7 +73,12 @@ const App = () => {
         setTimeout(() => {
           setMesage(null);
         }, 5000);
-      });
+      }).catch((error) => {
+        setMesage(error.response.data.error)
+        setTimeout(() => {
+          setMesage(null);
+        }, 5000);
+      })
     }
   };
 
